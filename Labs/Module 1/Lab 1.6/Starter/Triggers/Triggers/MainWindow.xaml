@@ -1,0 +1,14 @@
+﻿<Window x:Class="Triggers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trigger Test" Height="300" Width="525">
+    <StackPanel>
+        <TextBox Margin="10" />
+        <TextBox Margin="10" />
+        <TextBox Margin="10" />
+        <TextBox Margin="10" />
+        <TextBox Margin="10" />
+        <TextBox Margin="10" />
+        <TextBox Margin="10" />
+    </StackPanel>
+</Window>

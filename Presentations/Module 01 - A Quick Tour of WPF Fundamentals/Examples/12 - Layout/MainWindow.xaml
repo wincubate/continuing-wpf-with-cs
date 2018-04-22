@@ -1,0 +1,15 @@
+﻿<Window x:Class="Wincubate.FundamentalsExamples.Slide12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Layout" Height="350" Width="525">
+    <StackPanel>
+        <Button Background="Red">One</Button>
+        <Button Background="Orange">Two</Button>
+        <Button Background="Yellow">
+            <!--<Button.LayoutTransform>
+                <RotateTransform Angle="30" />
+            </Button.LayoutTransform>-->
+            Three</Button>
+        <Button Background="Lime">Four</Button>
+    </StackPanel>
+</Window>

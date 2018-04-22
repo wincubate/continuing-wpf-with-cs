@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding Test", "Binding Test\Binding Test.csproj", "{7ED3B124-CA5F-4CA8-BA01-304FA48310A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{B97159A8-8257-40FC-BF09-1BF023A3F9B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ED3B124-CA5F-4CA8-BA01-304FA48310A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED3B124-CA5F-4CA8-BA01-304FA48310A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED3B124-CA5F-4CA8-BA01-304FA48310A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED3B124-CA5F-4CA8-BA01-304FA48310A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97159A8-8257-40FC-BF09-1BF023A3F9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97159A8-8257-40FC-BF09-1BF023A3F9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97159A8-8257-40FC-BF09-1BF023A3F9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97159A8-8257-40FC-BF09-1BF023A3F9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

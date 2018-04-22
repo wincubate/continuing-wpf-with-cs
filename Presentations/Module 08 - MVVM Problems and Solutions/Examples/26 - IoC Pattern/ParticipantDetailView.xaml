@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Wincubate.MvvmSolutions.Slide26.ParticipantDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        mc:Ignorable="d ignore"
+        d:DesignHeight="300" d:DesignWidth="300"
+        DataContext="{Binding ParticipantDetail, Source={StaticResource Locator}}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0">First Name:</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0">Last Name:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0">Company:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Company}"></TextBox>
+
+        <Button Command="{Binding SaveParticipantCommand}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">Save</Button>
+    </Grid>
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Wincubate.ControlTemplatesExamples.Slide11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:Wincubate.ControlTemplatesExamples.Slide11;assembly=Wincubate.ControlTemplatesExamples.Slide11"
+        Title="Using CounterControl" Height="350" Width="525">
+    <StackPanel>
+        <uc:CounterControl Name="counterControl"
+                           CounterChanged="OnCounterChanged"/>
+        
+        <Button Margin="10" HorizontalAlignment="Center">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="{Binding ElementName=counterControl, Path=Counter}" />
+            </Button.LayoutTransform>
+            <TextBlock FontSize="28">Button</TextBlock></Button>
+    </StackPanel>
+</Window>

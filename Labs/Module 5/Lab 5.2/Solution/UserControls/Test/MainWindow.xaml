@@ -1,0 +1,27 @@
+﻿<Window x:Class="Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:t="clr-namespace:Toolkit;assembly=Toolkit"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button>Animate!
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation From="White"  To="Black" Duration="0:0:3" AutoReverse="True" FillBehavior="Stop"
+                                    Storyboard.TargetName="cs"
+                                    Storyboard.TargetProperty="Color" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <t:ColorSelector x:Name="cs" Color="Black" ColorChanged="OnColorChanged" />
+        
+        <Label x:Name="lblEvents"></Label>
+    </StackPanel>
+</Window>

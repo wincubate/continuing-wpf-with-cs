@@ -1,0 +1,114 @@
+﻿<Window x:Class="Wincubate.ControlTemplatesExamples.Slide08.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Control Templates in Styles" Height="522" Width="300">
+    <Window.Resources>
+        <ControlTemplate x:Key="buttonTemplate" TargetType="Button">
+            <Grid RenderTransformOrigin=".5,.5">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <!-- Nothing to do -->                            
+                        </VisualState>
+                        <VisualState Name="MouseOver">
+                            <!-- Paint red -->
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="gradientStop0"
+                                                Storyboard.TargetProperty="Color"
+                                                To="Pink" Duration="0:0:.5" />
+                                <ColorAnimation Storyboard.TargetName="gradientStop1"
+                                                Storyboard.TargetProperty="Color"
+                                                To="Red" Duration="0:0:.5" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState Name="Pressed">
+                            <!-- Make discs smaller -->
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                 Storyboard.TargetProperty="ScaleX"
+                                                 To="0.9" Duration="0" />
+                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                 Storyboard.TargetProperty="ScaleY"
+                                                 To="0.9" Duration="0" />
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState Name="Disabled">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="gradientStop0"
+                                                Storyboard.TargetProperty="Color"
+                                                To="LightGray" Duration="0:0:.5" />                            
+                                <ColorAnimation Storyboard.TargetName="gradientStop1"
+                                                Storyboard.TargetProperty="Color"
+                                                To="Gray" Duration="0:0:.5" />                            
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                    <VisualStateGroup Name="FocusStates">
+                        <VisualState Name="Unfocused">
+                            <!-- Nothing to do -->
+                        </VisualState>
+                        <VisualState Name="Focused">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="translateTransform"
+                                                 Storyboard.TargetProperty="X"
+                                                 To="-10" AutoReverse="True" RepeatBehavior="Forever" Duration="0:0:.5">
+                                    <DoubleAnimation.EasingFunction>
+                                        <SineEase EasingMode="EaseInOut" />
+                                    </DoubleAnimation.EasingFunction>                                    
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform x:Name="scaleTransform"/>
+                        <TranslateTransform x:Name="translateTransform"/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+
+                <Ellipse Name="disc">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop x:Name="gradientStop0" Offset="0" Color="Cyan"/>
+                            <GradientStop x:Name="gradientStop1" Offset="1" Color="Blue"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse RenderTransformOrigin=".5,.5">
+                    <Ellipse.RenderTransform>
+                        <ScaleTransform ScaleX=".8" ScaleY=".8"/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1" Color="Transparent"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Viewbox Margin="{TemplateBinding Margin}">
+                    <ContentPresenter />
+                </Viewbox>
+            </Grid>
+        </ControlTemplate>
+
+        <Style TargetType="Button">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="Template" Value="{DynamicResource buttonTemplate}" />
+        </Style> 
+
+    </Window.Resources>
+
+    <StackPanel>
+        <Button Height="100" Width="100"
+                Margin="10">Button 1</Button>
+        <Button Height="100" Width="100"
+                IsEnabled="False"
+                Margin="10">Button 2</Button>
+        <Button Height="100" Width="100"
+                Margin="10">Button 3</Button>
+    </StackPanel>
+</Window>

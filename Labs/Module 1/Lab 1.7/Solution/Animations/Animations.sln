@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animations", "Animations\Animations.csproj", "{E6FDF733-EA56-4723-A17C-320F3666B11E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6FDF733-EA56-4723-A17C-320F3666B11E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FDF733-EA56-4723-A17C-320F3666B11E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FDF733-EA56-4723-A17C-320F3666B11E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FDF733-EA56-4723-A17C-320F3666B11E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

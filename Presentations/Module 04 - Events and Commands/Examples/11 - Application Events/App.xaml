@@ -1,0 +1,16 @@
+﻿<Application x:Class="Wincubate.EventAndCommandsExamples.Slide11.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml"
+             
+             Startup="Application_Startup"
+             Activated="Application_Activated"
+             Deactivated="Application_Deactivated"
+             SessionEnding="Application_SessionEnding"
+             Exit="Application_Exit"
+             
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

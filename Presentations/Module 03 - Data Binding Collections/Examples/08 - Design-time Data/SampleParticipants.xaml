@@ -1,0 +1,7 @@
+﻿<clr:Participants xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Data;assembly=Wincubate.DataBindingCollectionsExamples.Data">
+
+  <clr:Participant FirstName="Søren" LastName="Larsen" Company="Lottokupon Inc." />
+  <clr:Participant FirstName="Osama" LastName="Akharraz" Company="Vestegnens Aflagte" />
+  <clr:Participant FirstName="Peter" LastName="Graulund" Company="M.I.A." />
+
+</clr:Participants>

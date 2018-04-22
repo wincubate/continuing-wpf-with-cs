@@ -1,0 +1,31 @@
+﻿<Window x:Class="Wincubate.FundamentalsExamples.Slide22.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Simple Styles" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="style">
+            <Setter Property="Control.Background" Value="Azure" />
+            <Setter Property="Control.FontSize" Value="32" />
+            <!--<Setter Property="Control.RenderTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="10" />
+                </Setter.Value>
+            </Setter>-->
+            <EventSetter Event="Control.MouseLeave" Handler="OnMouseLeave" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <Button Margin="10" Style="{StaticResource style}">Hello</Button>
+        <Button Margin="10" Style="{StaticResource style}">World</Button>
+        <Button Margin="10">Yeah</Button>
+        <Button Margin="10">
+            <Button.Style>
+                <Style>
+                    <Setter Property="Button.FontWeight" Value="Bold" />
+                </Style>
+            </Button.Style>
+            Yahoooo!
+        </Button>
+        <!--<Label Margin="10"  Style="{StaticResource style}">This is some label</Label>-->
+    </StackPanel>
+</Window>

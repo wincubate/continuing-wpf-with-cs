@@ -1,0 +1,15 @@
+﻿<Window x:Class="Binding_Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Binding Test" Height="300" Width="525">
+<!-- TODO: Do stuff above -->
+    
+    <Window.Resources>
+        <!-- TODO: Do stuff here -->
+    </Window.Resources>
+    <StackPanel>
+        <ListBox><!-- TODO: Do stuff to ListBox within tags --></ListBox>
+
+        <Label><!-- TODO: Do stuff to Label within tags --></Label>
+    </StackPanel>
+</Window>

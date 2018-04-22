@@ -1,0 +1,33 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Data;assembly=Wincubate.DataBindingCollectionsExamples.Data"
+    Title="Change Notification" Height="300" Width="434">
+    <Window.Resources>
+        <DataTemplate x:Key="participantDataTemplate">
+            <DockPanel Background="Beige" >
+                <DockPanel.RenderTransform>
+                    <RotateTransform Angle="-5" />
+                </DockPanel.RenderTransform>
+                <Image DockPanel.Dock="Left"
+                       Source="{Binding Path=ImageUri}"
+                       Width="100" Height="100"
+                       Stretch="UniformToFill"
+                       Margin="10"></Image>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Label FontWeight="Bold" Content="{Binding Path=FullName}" />
+                    <Label Content="{Binding Path=Company}" />
+                </StackPanel>
+            </DockPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button Name="btnModify" Click="btnModify_Click" Margin="4">Modify participant</Button>
+            <Button Name="btnAdd" Click="btnAdd_Click" Margin="4">Add new participant</Button>
+            <!--<Button Name="btnThreadAdd" Click="btnThreadAdd_Click" Margin="4">"Thread-add" new participant</Button>-->
+        </StackPanel>
+        <ListBox ItemsSource="{Binding}" ItemTemplate="{StaticResource participantDataTemplate}">
+        </ListBox>
+    </DockPanel>
+</Window>

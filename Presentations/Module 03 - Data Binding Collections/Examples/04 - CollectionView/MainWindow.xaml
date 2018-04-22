@@ -1,0 +1,19 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Data;assembly=Wincubate.DataBindingCollectionsExamples.Data"
+        Title="Collection Views" Height="323" Width="300">
+    <Window.DataContext>
+        <clr:Participants />
+    </Window.DataContext>
+    <StackPanel Height="287">
+        <ListBox ItemsSource="{Binding}" DisplayMemberPath="FirstName" IsSynchronizedWithCurrentItem="True"></ListBox>
+
+        <Label x:Name="label" Content="{Binding Path=Company}"></Label>
+
+        <Button x:Name="buttonMoveFirst" Click="buttonMoveFirst_Click" Margin="20,5,20,5">Move First</Button>
+        <Button x:Name="buttonMovePrevious" Click="buttonMovePrevious_Click" Margin="20,5,20,5">Move Previous</Button>
+        <Button x:Name="buttonMoveNext" Click="buttonMoveNext_Click" Margin="20,5,20,5">Move Next</Button>
+        <Button x:Name="buttonMoveLast" Click="buttonMoveLast_Click" Margin="20,5,20,5">Move Last</Button>
+    </StackPanel>
+</Window>

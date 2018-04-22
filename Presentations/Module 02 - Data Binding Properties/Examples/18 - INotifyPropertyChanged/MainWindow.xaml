@@ -1,0 +1,27 @@
+﻿<Window x:Class="Wincubate.DataBindingPropertiesExamples.Slide18.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingPropertiesExamples.Data;assembly=Wincubate.DataBindingPropertiesExamples.Data"
+    Title="Change Notification" Height="300" Width="434">
+    <Window.Resources>
+    </Window.Resources>
+    <StackPanel>
+        <Button Name="btnModify" Click="btnModify_Click" Margin="4,4,4,50">Modify participant</Button>
+
+        <DockPanel Background="Beige" >
+            <DockPanel.RenderTransform>
+                <RotateTransform Angle="-5" />
+            </DockPanel.RenderTransform>
+            <Image DockPanel.Dock="Left"
+                    Source="{Binding Path=ImageUri}"
+                    Width="100" Height="100"
+                    Stretch="UniformToFill"
+                    Margin="10"></Image>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <Label FontWeight="Bold" Content="{Binding Path=FullName}" />
+                <Label Content="{Binding Path=Company}" />
+            </StackPanel>
+        </DockPanel>
+        
+    </StackPanel>
+</Window>

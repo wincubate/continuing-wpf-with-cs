@@ -1,0 +1,19 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Data;assembly=Wincubate.DataBindingCollectionsExamples.Data"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="CollectionViewSource" Height="350" Width="525">
+    <Window.Resources>
+        <clr:Participants x:Key="participants" />
+        <CollectionViewSource x:Key="cvs"
+                              Source="{Binding Source={StaticResource participants}}">
+            <!--<CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="Company"/>
+            </CollectionViewSource.SortDescriptions>-->            
+        </CollectionViewSource>
+    </Window.Resources>
+
+    <ListBox ItemsSource="{Binding Source={StaticResource cvs}}"
+             DisplayMemberPath="FullName"/>        
+</Window>

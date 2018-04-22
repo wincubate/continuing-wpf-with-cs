@@ -1,0 +1,35 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:io="clr-namespace:System.IO;assembly=mscorlib"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Slide10"
+        Title="HierarchicalDataTemplate" Height="350" Width="525">
+    <Window.Resources>
+        <clr:FileSystemInfoConverter x:Key="fileSystemInfoConverter" />
+        
+        <HierarchicalDataTemplate DataType="{x:Type io:DirectoryInfo}"
+                                  ItemsSource="{Binding Converter={StaticResource fileSystemInfoConverter}}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Source="Images/folder.png" />
+                <TextBlock Text="{Binding Name}" Margin="5,0,0,0" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        
+        <DataTemplate DataType="{x:Type io:FileInfo}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Source="Images/file.png" />
+                <TextBlock Text="{Binding Name}" Margin="5,0,0,0" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <TreeView>
+        <TreeViewItem ItemsSource="{Binding}">
+            <TreeViewItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="16" Height="16" Source="Images/drive.png" />
+                    <TextBlock Text="C:\" Margin="5,0,0,0" />
+                </StackPanel>
+            </TreeViewItem.Header>
+        </TreeViewItem>
+    </TreeView>
+</Window>

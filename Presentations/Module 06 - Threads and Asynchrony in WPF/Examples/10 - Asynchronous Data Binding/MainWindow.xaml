@@ -1,0 +1,24 @@
+﻿<Window x:Class="Wincubate.ThreadsAndAsynchronyExamples.Slide10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clr="clr-namespace:Wincubate.ThreadsAndAsynchronyExamples.Slide10"
+        Title="Asynchronous Data Binding" Height="350" Width="525">
+    
+    <Window.DataContext>
+        <clr:Model />
+    </Window.DataContext>
+
+    <Grid>
+        <TextBlock Margin="10">
+            <TextBlock.Text>
+                <PriorityBinding FallbackValue="N/A">
+                    <Binding Path="Slowest" IsAsync="True"/>
+                    <Binding Path="Slow" IsAsync="True"/>
+                    <Binding Path="Normal" IsAsync="True"/>
+                    <Binding Path="Fast" IsAsync="True"/>
+                    <Binding Path="Fastest" />
+                </PriorityBinding>
+            </TextBlock.Text>
+        </TextBlock>
+    </Grid>
+</Window>

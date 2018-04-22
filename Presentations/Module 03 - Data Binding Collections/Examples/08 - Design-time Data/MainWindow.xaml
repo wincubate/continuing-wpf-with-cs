@@ -1,0 +1,25 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide08.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Data;assembly=Wincubate.DataBindingCollectionsExamples.Data"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <clr:Participants />
+    </Window.DataContext>
+    <d:Window.DataContext>
+        <clr:Participants>
+            <clr:Participant FirstName="Lilja" LastName="Thorsen" Company="PFA Pension" />
+            <clr:Participant FirstName="Jacob Johan" LastName="Jensen" Company="Edlund A/S" />
+            <clr:Participant FirstName="Jesper" LastName="Gulmann Henriksen" Company="Wincubate ApS" />
+        </clr:Participants>
+    </d:Window.DataContext>
+    
+    <StackPanel>
+        <DataGrid Margin="10"
+                  ItemsSource="{Binding}" />
+    </StackPanel>
+</Window>

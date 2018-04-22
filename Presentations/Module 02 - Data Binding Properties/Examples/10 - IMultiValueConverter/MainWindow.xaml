@@ -1,0 +1,25 @@
+﻿<Window x:Class="Wincubate.DataBindingPropertiesExamples.Slide10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingPropertiesExamples.Slide10"
+        Title="Multi-Value Converters" Height="250" Width="300">
+    <Window.Resources>
+        <clr:AverageConverter x:Key="averageConverter" />
+    </Window.Resources>
+    <StackPanel>
+        <Label>
+            <Label.Content>
+                <MultiBinding Converter="{StaticResource averageConverter}">
+                    <Binding ElementName="sliAmount1" Path="Value"></Binding>
+                    <Binding ElementName="sliAmount2" Path="Value"></Binding>
+                    <Binding ElementName="sliAmount3" Path="Value"></Binding>
+                    <Binding ElementName="sliAmount4" Path="Value"></Binding>
+                </MultiBinding>
+            </Label.Content>
+        </Label>
+        <Slider x:Name="sliAmount1" Minimum="-1000" Maximum="1000" Ticks="500" Margin="10"></Slider>
+        <Slider x:Name="sliAmount2" Minimum="-1000" Maximum="1000" Ticks="500" Margin="10"></Slider>
+        <Slider x:Name="sliAmount3" Minimum="-1000" Maximum="1000" Ticks="500" Margin="10"></Slider>
+        <Slider x:Name="sliAmount4" Minimum="-1000" Maximum="1000" Ticks="500" Margin="10"></Slider>
+    </StackPanel>
+</Window>

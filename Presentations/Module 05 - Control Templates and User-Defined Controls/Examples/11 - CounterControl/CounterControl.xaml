@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Wincubate.ControlTemplatesExamples.Slide11.CounterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="86" d:DesignWidth="120"
+             Height="86" Width="120">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="3">
+            <StackPanel Orientation="Vertical">
+                <RepeatButton Name="btnIncrement"
+                              Click="btnIncrement_Click"
+                              Height="23" Width="75" Margin="3">Increment</RepeatButton>
+                <TextBlock Name="tbCount"
+                           HorizontalAlignment="Center" Margin="3">0</TextBlock>
+                <RepeatButton Name="btnDecrement"
+                              Click="btnDecrement_Click"
+                              Height="23" Width="75" Margin="3">Decrement</RepeatButton>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

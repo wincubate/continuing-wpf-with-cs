@@ -1,0 +1,23 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:clr="clr-namespace:Wincubate.DataBindingCollectionsExamples.Data;assembly=Wincubate.DataBindingCollectionsExamples.Data"
+        Title="ObjectDataProvider" Height="300" Width="300">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="participantsProvider"
+                            ObjectType="{x:Type clr:Participants}"
+                            MethodName="CloneFirst">
+            <ObjectDataProvider.ConstructorParameters>
+                <system:Int32>20</system:Int32>
+            </ObjectDataProvider.ConstructorParameters>
+            <ObjectDataProvider.MethodParameters>
+                <system:Int32>10</system:Int32>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <ListBox ItemsSource="{Binding Source={StaticResource participantsProvider}}"
+             DisplayMemberPath="FirstName">
+        
+    </ListBox>
+</Window>

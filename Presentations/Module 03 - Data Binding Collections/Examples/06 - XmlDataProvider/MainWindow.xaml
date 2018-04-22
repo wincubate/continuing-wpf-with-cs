@@ -1,0 +1,9 @@
+﻿<Window x:Class="Wincubate.DataBindingCollectionsExamples.Slide06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="XmlDataProvider" Height="350" Width="525">
+    <Window.Resources>
+        <XmlDataProvider x:Key="movies" Source="Movies.xml" XPath="Movies"/>
+    </Window.Resources>
+    <ListBox ItemsSource="{Binding Source={StaticResource movies}, XPath=Movie/Title}" />
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="Reusing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="124.621" Width="346.398">
+    <WrapPanel>
+        <!-- first Button has gradient colour and transformation applied -->
+        <Button Content="Button 1" Height="50" Width="50" Margin="10">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="LightYellow" Offset="0" />
+                    <GradientStop Color="LightPink" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.LayoutTransform>
+                <RotateTransform Angle="30" />
+            </Button.LayoutTransform>
+        </Button>
+
+        <!-- second Button has transformation only applied -->
+        <Button Content="Button 2" Height="50" Width="50" Margin="10" Background="LightGoldenrodYellow">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="30" />
+            </Button.LayoutTransform>
+        </Button>
+
+        <!-- third Button has gradient colour only applied -->
+        <Button Content="Button 3" Height="50" Width="50" Margin="10">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="LightYellow" Offset="0" />
+                    <GradientStop Color="LightPink" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <!-- fourth Button has neither applied -->
+        <Button Content="Button 4" Height="50" Width="50" Margin="10" Background="LightGoldenrodYellow">
+        </Button>
+    </WrapPanel>
+</Window>

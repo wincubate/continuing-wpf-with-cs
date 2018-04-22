@@ -1,0 +1,10 @@
+﻿<Application x:Class="TroelsBechQuotes.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TroelsBechQuotes.Wpf"
+             xmlns:vm="clr-namespace:TroelsBechQuotes.Pcl.ViewModel;assembly=TroelsBechQuotes.Pcl"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <vm:ViewModelLocator x:Key="Locator" />
+    </Application.Resources>
+</Application>

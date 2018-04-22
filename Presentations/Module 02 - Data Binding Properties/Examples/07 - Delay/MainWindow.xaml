@@ -1,0 +1,16 @@
+﻿<Window x:Class="Wincubate.DataBindingPropertiesExamples.Slide07.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Slider x:Name="slider"
+                Minimum="0" 
+                Maximum="100" 
+                Value="{Binding ElementName=textbox, Path=Text, Mode=TwoWay, Delay=500}" Margin="20"></Slider>
+        <TextBox x:Name="textbox"
+                 Text="87"
+                 Margin="20"/>
+        <!--<TextBox x:Name="txt2"
+                 Margin="20"/>-->
+    </StackPanel>
+</Window>

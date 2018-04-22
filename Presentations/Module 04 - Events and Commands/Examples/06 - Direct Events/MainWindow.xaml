@@ -1,0 +1,14 @@
+﻿<Window x:Class="Wincubate.EventAndCommandsExamples.Slide06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Routed Events" Height="222" Width="361">
+    <DockPanel>
+        <TextBlock FontSize="24" Margin="20">Direct Events</TextBlock>
+
+        <StackPanel>
+            <Button Margin="20">One</Button>
+            <Button Margin="20" MouseLeave="OnButtonLeave">Two</Button>
+            <Button Margin="20">Three</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>

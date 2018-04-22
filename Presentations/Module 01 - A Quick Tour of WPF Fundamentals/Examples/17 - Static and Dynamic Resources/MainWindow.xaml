@@ -1,0 +1,21 @@
+﻿<Window x:Class="Wincubate.FundamentalsExamples.Slide17.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Logical Resources" Height="378" Width="300">
+    <Window.Resources>
+        <SolidColorBrush x:Key="brush" Color="Pink" />
+    </Window.Resources>
+    <StackPanel>
+        <!--<StackPanel.Resources>
+            <SolidColorBrush x:Key="brush" Color="Lime" />
+        </StackPanel.Resources>-->
+        <Button Background="{StaticResource brush}" Margin="10">Button 1 </Button>
+        <Button Background="{DynamicResource brush}" Margin="10">Button 2</Button>
+        <Button x:Name="btnChangeBrushColor" Click="btnChangeBrushColor_Click" Margin="10">Change brush color</Button>
+        <Button x:Name="btnChangeBrush" Click="btnChangeBrush_Click" Margin="10">Change brush</Button>
+        <Button x:Name="btnLookupOtherBrush" Click="btnLookupOtherBrush_Click" Margin="10">Lookup otherBrush</Button>
+        <Button x:Name="btnChangeOtherBrush" Click="btnChangeOtherBrush_Click" Margin="10">Change otherBrush color</Button>
+        <Button x:Name="btnA" Margin="10">Button A</Button>
+        <Button x:Name="btnB" Margin="10">Button B</Button>
+    </StackPanel>
+</Window>

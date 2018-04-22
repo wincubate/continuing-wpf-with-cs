@@ -1,0 +1,39 @@
+﻿<Window x:Class="Wincubate.EventAndCommandsExamples.Slide08.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Routed Events" Height="344" Width="580"
+        PreviewMouseDown="OnPreviewMouseDown"
+        MouseDown="OnMouseDown">
+    <DockPanel
+        PreviewMouseDown="OnPreviewMouseDown"
+        MouseDown="OnMouseDown">
+        <TextBlock DockPanel.Dock="Left"
+                   FontSize="24"
+                   Margin="20"
+                   PreviewMouseDown="OnPreviewMouseDown"
+                   MouseDown="OnMouseDown">Tunneling Events</TextBlock>
+
+        <StackPanel
+            DockPanel.Dock="Left"
+            PreviewMouseDown="OnPreviewMouseDown"
+            MouseDown="OnMouseDown">
+            <Label Margin="20"
+                    PreviewMouseDown="OnPreviewMouseDown"
+                    MouseDown="OnMouseDown">One</Label>
+            <Label Margin="20"
+                    PreviewMouseDown="OnPreviewMouseDown"
+                    MouseDown="OnMouseDown">Two</Label>
+            <Label Margin="20"
+                    PreviewMouseDown="OnPreviewMouseDown"
+                    MouseDown="OnMouseDown">Three</Label>
+        </StackPanel>
+        
+        <!-- Bookkeeping DockPanel -->
+        <DockPanel Background="White">
+            <Button Name="Clear"
+                    DockPanel.Dock="Bottom" 
+                    Click="OnClear">Clear</Button>
+            <ListBox Name="lstEvents" />
+        </DockPanel>
+    </DockPanel>
+</Window>

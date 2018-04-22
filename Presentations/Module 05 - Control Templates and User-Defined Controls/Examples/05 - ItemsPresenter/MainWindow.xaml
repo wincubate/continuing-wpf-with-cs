@@ -1,0 +1,44 @@
+﻿<Window x:Class="Wincubate.ControlTemplatesExamples.Slide05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ItemsPresenter" Height="300" Width="543">
+    <ListBox>
+        <ListBox.Template>
+            <ControlTemplate>
+                <Grid>
+                    <Ellipse
+                        Stroke="Blue"
+                        StrokeThickness="4" />
+                    <ScrollViewer
+                        HorizontalScrollBarVisibility="Auto"
+                        VerticalScrollBarVisibility="Auto">
+                        <ItemsPresenter HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"/>
+                    </ScrollViewer>
+                </Grid>
+            </ControlTemplate>
+        </ListBox.Template>
+        <ListBoxItem>Steffen Rasmussen</ListBoxItem>
+        <ListBoxItem>Anders Rasmussen</ListBoxItem>
+        <ListBoxItem>Adam Eckersley</ListBoxItem>
+        <ListBoxItem>Arthur Sorin</ListBoxItem>
+        <ListBoxItem>Mark Howard</ListBoxItem>
+        <ListBoxItem>Anders Kure</ListBoxItem>
+        <ListBoxItem>Frederik Krabbe</ListBoxItem>
+        <ListBoxItem>Jens Gjesing</ListBoxItem>
+        <ListBoxItem>Alexander Jackson Møller</ListBoxItem>
+        <ListBoxItem>Mikkel Kirkeskov</ListBoxItem>
+        <ListBoxItem>Dan Thomassen</ListBoxItem>
+        <ListBoxItem>Stephan Petersen</ListBoxItem>
+        <ListBoxItem>Martin Jørgensen</ListBoxItem>
+        <ListBoxItem>Benny Feilhaber</ListBoxItem>
+        <ListBoxItem>Jerry Lucena</ListBoxItem>
+        <ListBoxItem>Kasper Povlsen</ListBoxItem>
+        <ListBoxItem>David Devdariani</ListBoxItem>
+        <ListBoxItem>Casper Sloth</ListBoxItem>
+        <ListBoxItem>Peter Graulund</ListBoxItem>
+        <ListBoxItem>Aron Jóhannsson</ListBoxItem>
+        <ListBoxItem>Sanel Kapidzic</ListBoxItem>
+        <ListBoxItem>Dennis Høegh</ListBoxItem>
+    </ListBox>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="Wincubate.ControlTemplatesExamples.Slide12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:Wincubate.ControlTemplatesExamples.Slide12;assembly=Wincubate.ControlTemplatesExamples.Slide12"
+    Title="Using the ClockControl Custom Control" Height="350" Width="525">
+    <StackPanel>
+        <cc:ClockControl x:Name="clockControl"
+                         Foreground="Red"
+                         BorderBrush="Pink"
+                         BorderThickness="4"
+                         FontSize="24" />
+        <!--<TextBox x:Name="textbox" Margin="10"
+                 Text="{Binding ElementName=clockControl, Path=Time}"></TextBox>-->
+    </StackPanel>
+</Window>
