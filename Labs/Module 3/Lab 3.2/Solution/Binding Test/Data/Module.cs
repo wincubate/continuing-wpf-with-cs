@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Wincubate.Module09.Data
+namespace BindingTest.Data
 {
    public class Module
    {

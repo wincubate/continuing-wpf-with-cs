@@ -12,9 +12,9 @@
     </Window.DataContext>
     <d:Window.DataContext>
         <clr:Participants>
-            <clr:Participant FirstName="Lilja" LastName="Thorsen" Company="PFA Pension" />
-            <clr:Participant FirstName="Jacob Johan" LastName="Jensen" Company="Edlund A/S" />
-            <clr:Participant FirstName="Jesper" LastName="Gulmann Henriksen" Company="Wincubate ApS" />
+            <clr:Participant FirstName="Mo" LastName="Salah" Company="Egyptian Kings" />
+            <clr:Participant FirstName="Ash" LastName="Williams" Company="S-Mart" />
+            <clr:Participant FirstName="Frodo" LastName="Baggins" Company="The Shire" />
         </clr:Participants>
     </d:Window.DataContext>
     

@@ -15,7 +15,7 @@ namespace TaskTest
             InitializeComponent();
         }
 
-        Task<int> ComputeLengthSum()
+        Task<int> ComputeLengthSumAsync()
         {
             Task<string> t1 = CreateFetchTask( "http://www.jp.dk/" );
             Task<string> t2 = CreateFetchTask( "http://www.bt.dk/" );
@@ -36,7 +36,7 @@ namespace TaskTest
 
         async void OnComputeClick( object sender, RoutedEventArgs e )
         {
-            tbResult.Text = "The sum of the document lengths are " + await ComputeLengthSum();
+            tbResult.Text = "The sum of the document lengths are " + await ComputeLengthSumAsync();
         }
     }
 }

@@ -8,8 +8,8 @@
     <ProjectGuid>{B97159A8-8257-40FC-BF09-1BF023A3F9B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wincubate.Module09.Data</RootNamespace>
-    <AssemblyName>Wincubate.Module09.Data</AssemblyName>
+    <RootNamespace>BindingTest.Data</RootNamespace>
+    <AssemblyName>BindingTest.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

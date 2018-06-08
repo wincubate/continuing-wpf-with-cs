@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 
-namespace Wincubate.Module09.Data
+namespace BindingTest.Data
 {
    public class ParticipantsGrouper : IValueConverter
    {

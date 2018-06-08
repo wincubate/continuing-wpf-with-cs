@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Collections.ObjectModel;
 
 namespace Wincubate.DataBindingPropertiesExamples.Data
 {
@@ -12,26 +10,26 @@ namespace Wincubate.DataBindingPropertiesExamples.Data
         {
             this.Add( new Participant( "Gulmann Henriksen",
                                        "Jesper",
-                                       "Wincubate",
+                                       "Wincubate ApS",
                                        new Uri( "pack://application:,,,/Wincubate.DataBindingPropertiesExamples.Data;component/JGH.jpg" ) ) );
-            this.Add( new Participant( "Møller Grønfeldt",
-                                       "Mads",
-                                       "Codeblend" ) );
-            this.Add( new Participant( "Foged",
+            this.Add( new Participant( "Grønfeldt",
+                                       "Hans",
+                                       "Codeblenderiet" ) );
+            this.Add( new Participant( "Finsen",
                                        "Kim",
-                                       "DSE Airport Solutions A/S" ) );
-            this.Add( new Participant( "Bjerner",
+                                       "Onomatopoietikon A/S" ) );
+            this.Add( new Participant( "Bastrup",
                                        "Rasmus",
-                                       "DSE Airport Solutions A/S" ) );
-            this.Add( new Participant( "Nazarian",
-                                       "Armen",
-                                       "DSE Airport Solutions A/S" ) );
-            this.Add( new Participant( "Bresson",
-                                       "Bo",
-                                       "HRtools A/S" ) );
-            this.Add( new Participant( "Bresson",
-                                       "Lene Rikke",
-                                       "HRtools A/S" ) );
+                                       "Onomatopoietikon A/S") );
+            this.Add( new Participant( "Sanaa",
+                                       "Armin",
+                                       "Onomatopoietikon A/S") );
+            this.Add( new Participant( "Besson",
+                                       "Luc",
+                                       "Tools for Fools A/S" ) );
+            this.Add( new Participant( "Besson",
+                                       "Beth",
+                                       "Tools for Fools A/S") );
         }
 
         public Participants( int number )

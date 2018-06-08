@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.ComponentModel;
 
-namespace Wincubate.Module09.Data
+namespace BindingTest.Data
 {
    public class Participant : INotifyPropertyChanged
    {
@@ -15,7 +15,7 @@ namespace Wincubate.Module09.Data
       {
          get
          {
-            return new Uri( "pack://application:,,,/Wincubate.Module09.Data;component/nophoto.gif" );
+            return new Uri( "pack://application:,,,/BindingTest.Data;component/nophoto.gif" );
          }
       }
 
@@ -108,7 +108,7 @@ namespace Wincubate.Module09.Data
              "Gulmann Henriksen",
              "Jesper",
              "Wincubate",
-             new Uri( "pack://application:,,,/Wincubate.Module09.Data;component/JGH.jpg" ) )
+             new Uri( "pack://application:,,,/BindingTest.Data;component/JGH.jpg" ) )
       {
       }
 
