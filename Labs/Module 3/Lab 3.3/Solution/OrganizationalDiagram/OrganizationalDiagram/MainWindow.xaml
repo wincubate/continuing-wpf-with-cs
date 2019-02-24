@@ -1,0 +1,54 @@
+﻿<Window x:Class="OrganizationalDiagram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:clr="clr-namespace:OrganizationalDiagram"
+        mc:Ignorable="d"
+        Title="{Binding Name}" Height="250" Width="400">
+    <Window.DataContext>
+        <clr:Organization />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type clr:Organization}">
+            <TreeViewItem ItemsSource="{Binding Departments}">
+                <TreeViewItem.Header>
+                    <TextBlock FontWeight="Bold" Text="{Binding Name}" />
+                </TreeViewItem.Header>
+            </TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type clr:Department}">
+            <TreeViewItem ItemsSource="{Binding InCharge}">
+                <TreeViewItem.Header>
+                    <TextBlock FontStyle="Italic" Text="{Binding Name}"/>
+                </TreeViewItem.Header>
+            </TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type clr:Manager}">
+            <TreeViewItem ItemsSource="{Binding Employees}">
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FullName}" />
+                        <TextBlock Margin="10,0,0,0" FontWeight="ExtraLight" Text="{Binding Title}" />
+                    </StackPanel>
+                </TreeViewItem.Header>
+            </TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type clr:Employee}">
+            <TreeViewItem>
+                <TreeViewItem.Header>
+                    <TextBlock Text="{Binding FullName}" />
+                </TreeViewItem.Header>
+            </TreeViewItem>
+        </DataTemplate>
+
+    </Window.Resources>
+    
+    <TreeView>
+        <TreeViewItem Header="{Binding}" />
+    </TreeView>
+</Window>
