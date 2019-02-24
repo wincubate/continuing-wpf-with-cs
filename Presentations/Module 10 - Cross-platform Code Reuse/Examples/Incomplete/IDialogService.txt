@@ -1,0 +1,41 @@
+        #region IDialogService Implementation
+
+        public Task<DialogResult> ShowAsync( string message, string title )
+        {
+            return ShowAsync(message, title, DialogButtons.OK);
+        }
+
+        async public Task<DialogResult> ShowAsync( string message, string title, DialogButtons buttons )
+        {
+            if (string.IsNullOrEmpty(message))
+            {
+                throw new ArgumentException(
+                  "The specified message cannot be null or empty.", "message");
+            }
+            if (string.IsNullOrEmpty(title))
+            {
+                throw new ArgumentException(
+                  "The specified title cannot be null or empty.", "title");
+            }
+            MessageBoxResult result = MessageBoxResult.None;
+
+            // Determine whether the calling thread is the thread
+            // associated with the Dispatcher.
+            if (this.Dispatcher.CheckAccess())
+            {
+                result = MessageBox.Show(message, title, (MessageBoxButton)buttons);
+            }
+            else
+            {
+                // Execute asynchronously on the thread the Dispatcher is associated with. 
+                await this.Dispatcher.InvokeAsync(() =>
+                {
+                    result = MessageBox.Show(message, title,
+                    (MessageBoxButton)buttons);
+                });
+            }
+
+            return (DialogResult)result;
+        }
+
+        #endregion
