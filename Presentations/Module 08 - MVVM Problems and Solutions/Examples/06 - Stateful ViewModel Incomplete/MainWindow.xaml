@@ -1,0 +1,31 @@
+﻿<Window x:Class="Wincubate.MvvmPatternsExamples.Slide06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stateful ViewModel" Height="350" Width="525">
+    <Grid TextBox.TextChanged="Grid_TextChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0">First Name:</TextBlock>
+        <TextBox x:Name="txtFirstName" Grid.Row="0" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0">Last Name:</TextBlock>
+        <TextBox x:Name="txtLastName" Grid.Row="1" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0">Company:</TextBlock>
+        <TextBox x:Name="txtCompany" Grid.Row="2" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0">Name Tag:</TextBlock>
+        <TextBlock x:Name="tbNameTag" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                   FontSize="28" FontFamily="Segoe UI Light" HorizontalAlignment="Center"></TextBlock>
+    </Grid>
+</Window>

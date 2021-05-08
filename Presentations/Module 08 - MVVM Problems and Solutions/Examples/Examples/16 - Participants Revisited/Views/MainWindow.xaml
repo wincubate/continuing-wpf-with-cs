@@ -1,0 +1,40 @@
+﻿<Window x:Class="Wincubate.IntroducingMvvmExamples.Slide16.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:Wincubate.IntroducingMvvmExamples.Slide16"
+        xmlns:vm="clr-namespace:Wincubate.IntroducingMvvmExamples.Slide16"
+        Title="MVVM Participants" Height="350" Width="525"
+        
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:ParticipantViewModel}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Grid.Row="0" Grid.Column="0" Background="Beige" >
+                    <DockPanel.RenderTransform>
+                        <RotateTransform Angle="-5" />
+                    </DockPanel.RenderTransform>
+                    <Image DockPanel.Dock="Left"
+                           Source="{Binding Path=ImageUri}"
+                           Width="100" Height="100"
+                           Stretch="UniformToFill"
+                           Margin="10"></Image>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                        <Label FontWeight="Bold" Content="{Binding Path=FullName}" />
+                        <Label Content="{Binding Path=Company}" />
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <v:ParticipantsView />
+</Window>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="Wincubate.MvvmPatternsExamples.Slide10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:clr="clr-namespace:Wincubate.MvvmPatternsExamples.Slide10"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        mc:Ignorable="d ignore"
+        Height="300"
+        Width="300"
+        Title="Attached Behaviors Pattern"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <DockPanel>
+        <Button Command="{Binding IncrementCommand}"
+                DockPanel.Dock="Top">Increment</Button>
+        <TextBlock FontSize="16" Text="{Binding Counter}"
+                   DockPanel.Dock="Top"/>
+        <!--<Rectangle Margin="10" Fill="Tomato"
+                   clr:ClickBehavior.Command="{Binding IncrementCommand}">
+        </Rectangle>-->
+        <!--<Rectangle Margin="10" Fill="Azure">
+            <i:Interaction.Behaviors>
+                <clr:MouseMoveBehavior X="{Binding Counter, Mode=TwoWay}" /> 
+            </i:Interaction.Behaviors>
+        </Rectangle>-->
+        <!--<TextBox>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <i:InvokeCommandAction Command="{Binding IncrementCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>-->
+    </DockPanel>       
+</Window>

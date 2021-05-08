@@ -1,0 +1,38 @@
+﻿<Window x:Class="Wincubate.MvvmPatternsExamples.Slide06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Wincubate.MvvmPatternsExamples.Slide06"
+        Title="Stateful ViewModel" Height="350" Width="525">
+    
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0">First Name:</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0">Last Name:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0">Company:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Company, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0">Name Tag:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                   FontSize="28" FontFamily="Segoe UI Light" HorizontalAlignment="Center"
+                   Text="{Binding NameTag}"></TextBlock>
+    </Grid>
+</Window>

@@ -1,32 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Wincubate.MvvmSolutions.Data
+namespace Wincubate.MvvmPatternsExamples.Data
 {
     public class Participant : INotifyPropertyChanged
     {
-        #region Properties
-
-        static Uri ImageNotAvailableUri
-        {
-            get
-            {
-                return new Uri("pack://application:,,,/Wincubate.MvvmSolutions.Data;component/nophoto.gif");
-            }
-        }
-
-        public string FullName
-        {
-            get
-            {
-                return (FirstName ?? "") + " " + (LastName ?? "");
-            }
-        }
+        public int Id { get; private set; }
 
         public string LastName
         {
@@ -81,99 +60,13 @@ namespace Wincubate.MvvmSolutions.Data
         }
         private string _company;
 
-        public Uri ImageUri
+        public Participant(int id, string lastName, string firstName, string company)
         {
-            get
-            {
-                return _imageUri;
-            }
-            set
-            {
-                if (value != _imageUri)
-                {
-                    _imageUri = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-        private Uri _imageUri;
-
-        public IList<Module> FavoriteModules
-        {
-            get
-            {
-                return _favoriteModules;
-            }
-            set
-            {
-                if (value.SequenceEqual(_favoriteModules) == false)
-                {
-                    _favoriteModules = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-        private IList<Module> _favoriteModules;
-
-        #endregion
-
-        #region Constructors
-
-        public Participant()
-           : this(
-               "Gulmann Henriksen",
-               "Jesper",
-               "Wincubate",
-               new Uri("pack://application:,,,/Wincubate.MvvmSolutions.Data;component/JGH.jpg"))
-        {
-        }
-
-        public Participant(string lastName, string firstName, string company)
-           : this(
-               lastName,
-               firstName,
-               company,
-               ImageNotAvailableUri)
-        {
-        }
-
-        public Participant(string lastName, string firstName, string company, Uri imageUri)
-        {
+            Id = id;
             LastName = lastName;
             FirstName = firstName;
             Company = company;
-            ImageUri = imageUri;
-
-            #region Set random favorite modules
-
-            int j = 1;
-            _favoriteModules = new List<Module>();
-            Random random = new Random((lastName + FirstName).Length);
-            for (int i = 0; i < 3; i++)
-            {
-                j += 1 + random.Next(3);
-
-                _favoriteModules.Add(new Module
-                {
-                    Title = "Module " + j
-                });
-            }
-
-            #endregion
         }
-
-        #endregion
-
-        #region Custom Filter
-
-        public static bool CustomFilter(object o)
-        {
-            Participant p = o as Participant;
-
-            return p.Company.Length > 15;
-        }
-
-        #endregion
 
         #region INotifyPropertyChanged Members
 

@@ -1,29 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Wincubate.ThreadsAndAsynchronyExamples.Slide25
+namespace Wincubate.Threading.Module08
 {
-   class Program
-   {
-      static void Main( string[] args )
-      {
-         DoStuff();
+    class Program
+    {
+        static void Main()
+        {
+            DoStuff();
 
-         Console.ReadLine();
-      }
+            Console.ReadLine();
+        }
 
-      async static void DoStuff()
-      {
-         string url = "http://www.jp.dk";
+        async static void DoStuff()
+        {
+            string url = "http://www.jp.dk";
 
-         WebClient client = new WebClient();
-         string result = await client.DownloadStringTaskAsync( url );
+            WebClient client = new WebClient();
+            string result = await client.DownloadStringTaskAsync(url);
 
-         Console.WriteLine( result );
-      }
-   }
+            Console.WriteLine(result);
+        }
+    }
 }
