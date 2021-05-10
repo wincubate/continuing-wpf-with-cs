@@ -1,0 +1,27 @@
+﻿<Window x:Class="Wincubate.Module12.Slide12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:b="clr-namespace:Wincubate.Module12.Slide12"
+        Title="Expression Blend Actions and Triggers" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock FontSize="18" Margin="10">
+            <i:Interaction.Triggers>
+                <b:MouseClickTrigger>
+                    <b:MessageBoxAction Message="Yie-haaaar!" />
+                </b:MouseClickTrigger>
+            </i:Interaction.Triggers>
+            Wha-hooo...!</TextBlock>
+        
+        <CheckBox Content="Show/Hide Rectangle" IsChecked="True">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <b:VisibilityAction TargetName="rectangle"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </CheckBox>
+        
+        <Rectangle x:Name="rectangle" Fill="Blue" Width="100" Height="100" />
+        
+    </StackPanel>
+</Window>
