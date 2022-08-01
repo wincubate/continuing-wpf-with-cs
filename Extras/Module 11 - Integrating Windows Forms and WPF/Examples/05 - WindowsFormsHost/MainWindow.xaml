@@ -1,0 +1,17 @@
+﻿<Window x:Class="Wincubate.Module11.Slide05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        x:Name="toplevelWindow"
+        Title="WindowsFormsHost" Height="350" Width="525">
+    <DockPanel x:Name="layoutRoot">
+        <!--<WindowsFormsHost Margin="10" DockPanel.Dock="Top">
+            <wf:MaskedTextBox x:Name="mtb"
+                              Mask="(9999)00-00-00-00"
+                              MaskInputRejected="mtb_MaskInputRejected"/>
+        </WindowsFormsHost>-->
+        <WindowsFormsHost>
+            <wf:PropertyGrid x:Name="propertyGrid" SelectedObject="{x:Reference toplevelWindow}" />
+        </WindowsFormsHost>
+    </DockPanel>
+</Window>
